@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -87,6 +88,17 @@ public class TestTemplateOfList {
 
         LOGGER.info("最左边的元素: "+ noRemoveUser.toString());
 
+        //移除左边元素在等待的时间里，如果超过等待的时间仍没有元素则退出
+
+        Object popValue = redisTemplate.opsForList().rightPop("presentList",10, TimeUnit.SECONDS);
+        if (popValue!=null){
+            LOGGER.info("移除成功了:"+ popValue.toString());
+        }else{
+            LOGGER.info("超过60秒 集合中都没有元素自动退出了");
+        }
+
+
+        lvos.set(commonKey,19,list.get(0));
 
     }
 
