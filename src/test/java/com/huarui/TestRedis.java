@@ -1,6 +1,6 @@
 package com.huarui;
 
-import org.junit.Assert;
+import com.huarui.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +20,7 @@ public class TestRedis {
 	//1 注入spring 封装好的 redis客户端 之 StringRedisTemplate（专业存取字符串）
 	@Autowired
 	private StringRedisTemplate stringRedisTemplate;
+
 	//2 注入spring 封装好的 redis客户端 之 RedisTemplate（专业存取对象）
 	@Autowired
 	private RedisTemplate redisTemplate;
@@ -35,7 +36,17 @@ public class TestRedis {
 		hvos.put("keyList","key02","哈哈哈哈哈擦擦擦");
 		System.out.println(hvos.get("keyList","key02"));
 
+
+		Long delete = hvos.delete("keyList", "key02");
+
 		Boolean exists = redisTemplate.hasKey("key1");
+		if(exists){
+			System.out.println("存在key");
+		}else{
+			System.out.println("不存在key");
+		}
+
+		exists = stringRedisTemplate.hasKey("key1");
 		if(exists){
 			System.out.println("存在key");
 		}else{

@@ -1,4 +1,4 @@
-package com.huarui;
+package com.huarui.msg;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

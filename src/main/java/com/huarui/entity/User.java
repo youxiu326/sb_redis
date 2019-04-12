@@ -1,4 +1,4 @@
-package com.huarui;
+package com.huarui.entity;
 
 import java.awt.*;
 import java.io.Serializable;
