@@ -1,6 +1,5 @@
-package com.huarui.entity;
+package com.youxiu326.entity;
 
-import java.awt.*;
 import java.io.Serializable;
 import java.util.Date;
 

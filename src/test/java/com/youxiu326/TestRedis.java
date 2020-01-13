@@ -1,6 +1,6 @@
-package com.huarui;
+package com.youxiu326;
 
-import com.huarui.entity.User;
+import com.youxiu326.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

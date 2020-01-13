@@ -1,6 +1,6 @@
-package com.huarui.youxiu326;
+package com.youxiu326.youxiu326;
 
-import com.huarui.entity.User;
+import com.youxiu326.entity.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

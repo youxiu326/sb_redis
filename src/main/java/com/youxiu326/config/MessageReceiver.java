@@ -1,4 +1,4 @@
-package com.huarui.config;
+package com.youxiu326.config;
 
 import org.springframework.stereotype.Component;
 

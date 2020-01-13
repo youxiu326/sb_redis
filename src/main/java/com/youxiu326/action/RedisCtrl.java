@@ -1,4 +1,4 @@
-package com.huarui.action;
+package com.youxiu326.action;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
