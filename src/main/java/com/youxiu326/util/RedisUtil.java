@@ -58,7 +58,7 @@ public class RedisUtil {
         }
 
         try {
-            cursor.close();
+            //cursor.close();
             RedisConnectionUtils.releaseConnection(rc, factory);
         } catch (Exception e) {
             log.warn("Redis连接关闭异常，", e);
