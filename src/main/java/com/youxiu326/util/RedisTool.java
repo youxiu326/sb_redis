@@ -1,11 +1,15 @@
 package com.youxiu326.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.RedisStringCommands;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.data.redis.core.script.RedisScript;
+import org.springframework.data.redis.core.types.Expiration;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.stereotype.Component;
 import java.util.Collections;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Auther: lihui
@@ -60,5 +64,11 @@ public class RedisTool {
 
         return false;
     }
+
+    private Boolean setIfAbsent(Object key, Object value, Long timeout, TimeUnit unit) {
+        return redisTemplate.opsForValue().setIfAbsent(key,value,10L,TimeUnit.SECONDS);
+    }
+
+
 
 }
